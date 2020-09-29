@@ -30,7 +30,7 @@ class Array:
 
         print(array_multiplier % divisor)
 
-    def increasing_function(self):
+    def _increasing_function(self):
         flag = False
         for i in range(1, len(self.array)):
             if self.array[i - 1] < self.array[i]:
@@ -43,7 +43,7 @@ class Array:
         if flag:
             print(True)
 
-    def decreasing_function(self):
+    def _decreasing_function(self):
         flag =False
         for i in range(1, len(self.array)):
             if self.array[i - 1] > self.array[i]:
@@ -58,9 +58,9 @@ class Array:
 
     def is_monotonous(self):
         if self.array[0] < self.array[-1]:
-            Array.increasing_function(self)
+            Array._increasing_function(self)
         elif self.array[0] > self.array[-1]:
-            Array.decreasing_function(self)
+            Array._decreasing_function(self)
         else:
             print(False)
 
