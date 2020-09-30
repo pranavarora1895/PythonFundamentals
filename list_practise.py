@@ -14,3 +14,15 @@ class ListPractise:
     def swap_extremes(self):
         ListPractise.swap(self, pos1=1, pos2=0)
 
+    def rm_n_occurrence(self, word, Nth):
+        lisp = self.inp_list
+        word_idx = []
+        for element in range(0, len(lisp)):
+            if lisp[element] == word:
+                word_idx.append(element)
+
+        rm_idx = word_idx[Nth - 1]
+        lisp.pop(rm_idx)
+        print(lisp)
+
+
