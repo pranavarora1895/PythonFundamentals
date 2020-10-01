@@ -72,4 +72,10 @@ class ListPractise:
 
         print(cumulative_list)
 
+    def div_chunks(self, chunk):
+        chunked_list = self.inp_list.copy()
+        for element in range(0, len(chunked_list), chunk):
+            print(chunked_list[element:element + chunk])
+
+
 
