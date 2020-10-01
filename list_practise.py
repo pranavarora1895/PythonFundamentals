@@ -25,4 +25,22 @@ class ListPractise:
         lisp.pop(rm_idx)
         print(lisp)
 
+    def n_largest(self,Nth):
+        list_copy = self.inp_list.copy()
+        list_copy.sort(reverse=True)
+        print(f'{Nth} largest number in the list {self.inp_list} is {list_copy[Nth - 1]}')
+
+    def even_odd(self):
+        even_list = []
+        odd_list = []
+        for term in self.inp_list:
+            if term % 2 == 0:
+                even_list.append(term)
+            else:
+                odd_list.append(term)
+        even_list.sort()
+        print(even_list)
+        odd_list.sort()
+        print(odd_list)
+
 
