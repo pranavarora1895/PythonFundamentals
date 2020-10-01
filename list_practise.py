@@ -43,4 +43,33 @@ class ListPractise:
         odd_list.sort()
         print(odd_list)
 
+    def rm_empty_tuple(self):
+        inp_list_copy = self.inp_list.copy()
+        for element in inp_list_copy:
+            if element == ():
+                inp_list_copy.remove(element)
+        print(inp_list_copy)
+
+    def rm_duplicate_terms(self):
+        inp_copy = self.inp_list.copy()
+        check_duplicate = []
+        duplicate_list = []
+        for term in inp_copy:
+            if term in check_duplicate:
+                if term in duplicate_list:
+                    continue
+                duplicate_list.append(term)
+            check_duplicate.append(term)
+
+        print(f'The Duplicate terms of the list {inp_copy} are {duplicate_list}')
+
+    def cumulative_sum(self):
+        cumulative_list = []
+        summation = 0
+        for term in self.inp_list:
+            summation += term
+            cumulative_list.append(summation)
+
+        print(cumulative_list)
+
 
