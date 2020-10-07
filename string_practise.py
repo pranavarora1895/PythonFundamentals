@@ -59,11 +59,38 @@ class StringPractise:
     def two_strings_common(self, compared_string):
         inp_str = self.inp_string
         common_letters = []
-        for i_term in inp_str:
-            for j_term in compared_string:
+        for i_term in inp_str.lower():
+            for j_term in compared_string.lower():
                 if j_term in common_letters or j_term.isspace():
                     continue
                 if i_term == j_term:
                     common_letters.append(j_term)
-        print(f'The common characters in the strings "{inp_str}" and "{compared_string}" are {common_letters}')
+        return common_letters
 
+    def pr_common_char(self, compared_string):
+        inp_str = self.inp_string
+        common_char = StringPractise.two_strings_common(self, compared_string)
+        print(f'The common characters in the strings "{inp_str}" and "{compared_string}" are {common_char}')
+        print(f'Number of common characters: {len(common_char)}')
+
+    def vowels_in_string(self):
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        inp_str = self.inp_string
+        common_vowels_list = []
+
+        for character in inp_str.lower():
+            if character in vowels:
+                if character in common_vowels_list:
+                    continue
+                common_vowels_list.append(character)
+
+        common_vowels_list.sort()
+        print(f'The vowels in string "{inp_str}" are {common_vowels_list}')
+        print(f'The number of vowels are: {common_vowels_list.__len__()}')
+
+    def rm_duplicate_char(self):
+        inp_str = self.inp_string
+        unique_string = ''
+        copy_string = inp_str
+        unique_char = StringPractise.two_strings_common(self, copy_string)
+        print(f'The unique string without duplicates is {unique_string.join(unique_char)}')
