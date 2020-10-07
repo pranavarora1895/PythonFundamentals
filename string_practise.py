@@ -55,3 +55,15 @@ class StringPractise:
             print("Acceptable")
         else:
             print('Not Acceptable')
+
+    def two_strings_common(self, compared_string):
+        inp_str = self.inp_string
+        common_letters = []
+        for i_term in inp_str:
+            for j_term in compared_string:
+                if j_term in common_letters or j_term.isspace():
+                    continue
+                if i_term == j_term:
+                    common_letters.append(j_term)
+        print(f'The common characters in the strings "{inp_str}" and "{compared_string}" are {common_letters}')
+
